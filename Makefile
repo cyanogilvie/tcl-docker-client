@@ -1,6 +1,7 @@
-VER=0.9.0
+VER=0.9.1
 TCLSH=tclsh
-DESTDIR=/usr/local
+DESTDIR=
+PREFIX=/usr/local
 TM_MODE=-ziplet	# Compress the generated code and prefix a loader
 #TM_MODE=
 
@@ -17,8 +18,8 @@ tm/docker-$(VER).tm: v1.41.json
 #	pandoc --standalone --from markdown --to gfm doc/docker.md --output README.md
 
 install-tm: tm
-	mkdir -p "$(DESTDIR)/lib/tcl8/site-tcl/"
-	cp tm/docker-$(VER).tm "$(DESTDIR)/lib/tcl8/site-tcl/"
+	mkdir -p "$(DESTDIR)$(PREFIX)/lib/tcl8/site-tcl/"
+	cp tm/docker-$(VER).tm "$(DESTDIR)$(PREFIX)/lib/tcl8/site-tcl/"
 
 tm: tm/docker-$(VER).tm
 
@@ -30,8 +31,8 @@ install: install-tm install-doc
 docs: doc/docker.n README.md
 
 install-doc: docs
-	mkdir -p "$(DESTDIR)/man/mann"
-	cp doc/docker.n "$(DESTDIR)/man/mann/"
+	mkdir -p "$(DESTDIR)$(PREFIX)/man/mann"
+	cp doc/docker.n "$(DESTDIR)$(PREFIX)/man/mann/"
 
 clean:
 	-rm -r tm doc/docker.n
