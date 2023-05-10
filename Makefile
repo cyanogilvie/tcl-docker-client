@@ -1,4 +1,4 @@
-VER=0.9.1
+VER=0.9.2
 TCLSH=tclsh
 DESTDIR=
 PREFIX=/usr/local

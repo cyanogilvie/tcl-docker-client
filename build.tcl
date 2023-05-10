@@ -1,4 +1,4 @@
-package require openapi 0.4.4
+package require openapi 0.4.12
 package require parse_args 0.3.2
 package require chantricks
 
