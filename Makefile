@@ -19,7 +19,9 @@ tm/docker-$(VER).tm: v1.41.json
 
 install-tm: tm
 	mkdir -p "$(DESTDIR)$(PREFIX)/lib/tcl8/site-tcl/"
+	mkdir -p "$(DESTDIR)$(PREFIX)/lib/tcl9/site-tcl/"
 	cp tm/docker-$(VER).tm "$(DESTDIR)$(PREFIX)/lib/tcl8/site-tcl/"
+	cp tm/docker-$(VER).tm "$(DESTDIR)$(PREFIX)/lib/tcl9/site-tcl/"
 
 tm: tm/docker-$(VER).tm
 
